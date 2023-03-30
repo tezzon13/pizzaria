@@ -1,0 +1,148 @@
+/* Reset css para tirar todas as margens dos elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+/* Estilização do HEADER - Cabeçalho */
+.cabecalho{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.cabecalho > img {
+    height: 60px;    
+}
+.menu {
+    display: flex;
+}
+.menu > li {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.menu > li > a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px black;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.menu > li:hover {
+    background-color: rgb(115, 0, 0);
+}
+
+/* Estilizando nosso banner */
+.banner {
+    height: 400px;
+    background-image: url(../img/pizza.jpg);
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px green;
+}
+
+.banner > h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 30px;
+}
+.botao-vazado {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.botao-vazado:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Estilizando elementos do corpo da página */
+main {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+h2 {
+    color: darkgreen;
+}
+hr{
+    border: none;
+    background: rgb(167,0,0);
+    background: linear-gradient(90deg, rgba(167, 0, 0, 0) 10%, rgba(255, 0, 0, 1) 50%, rgba(0, 110, 133, 0) 90%);
+    height: 3px;
+    margin: 10px 20px;
+}
+
+/* Estilizando cards de sabores */
+.sabores{
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sabor{
+    margin: 10px;
+    background-color: green;
+    min-width: 250px;
+    max-width: 250px;
+}
+.sabor > img{
+    width: 100%;
+}
+
+/* Cards de Promoção */
+.promocoes{
+    display: flex;
+    overflow: scroll;
+}
+.promocoes::-webkit-scrollbar{
+    display: none;
+}
+ 
+/* Estlizando o rodapé - Footer*/
+.rodape{
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 -3px darkgreen;
+}
+li{
+    list-style-type: none;
+}
+
+li > a {
+    text-decoration: none;
+    color: white;
+}
+
+.endereco{
+    color:white
+}
+/*ajustando elemntos de acordo com a largura do dispositivo
+-quando a tela for menor que 500px alterar as propiedades de direcao do carde sabores e colocar o sabor ultilizando no minimo 100% da tela */
+@media (max-width:500px) {
+    .sabores{
+        flex-direction: row;
+        margin:10px;
+            }
+            .sabor{
+                min-width: 100px;
+            }
+}
